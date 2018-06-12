@@ -1,0 +1,23 @@
+/* pages/Demo/Demo.wxss */
+.back-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.area-container {
+  width: 750rpx;
+  height: 750rpx;
+}
+.top-container {
+
+  position: absolute;
+  width: 750rpx;
+  height: 750rpx;
+  background-color: #ddd;
+  z-index:999;
+}
+.areaview {
+  width: 200rpx;
+  height: 200rpx;
+}

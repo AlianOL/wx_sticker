@@ -1,0 +1,25 @@
+<view class='back-container'>
+  <!-- <view>
+    <view class='image-container' bindtouchstart='WraptouchStart' bindtouchmove='WraptouchMove'>
+      <image src='../../images/sticker/1.png'></image>
+    </view>
+    <image class='cancel' bindtap='cancel' src='../../images/cancel.png'></image>
+  </view> -->
+  <block wx:for="{{itemList}}" wx:key="{{item.id}}">
+    <!-- 圆心坐标 <text style='position:absolute;top:{{item.y}}px;left:{{item.x}}px;width:2px;height:2px;background-color:yellow;z-index:500'></text> -->
+    <view class='touchWrap' style='transform: scale({{item.scale}});top:{{item.top}}px;left:{{item.left}}px; '>
+      <view class='imgWrap {{item.active? "touchActive":""}}' style="transform: rotate({{item.angle}}deg);">
+        <image src='{{item.image}}' data-id='{{item.id}}' style='width:{{item.width}}px;height:{{item.height}}px;' bindtouchstart='WraptouchStart' bindload='loadImg' bindtouchmove='WraptouchMove' bindtouchend='WraptouchEnd'></image>
+        <image wx:if = "{{item.active}}" class='x' src='../../images/cancel.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtap='deleteItem'></image>
+        <image wx:if = "{{item.active}}" class='o' src='../../images/sticker/1.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'></image>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='bottom-container'>
+    <scroll-view class="recommend_scroll_x_box" scroll-x="true">
+      <view class="sticker-lists" wx:for="{{stickers}}" data-url="{{item}}" data-index='{{index}}' bindtap='changeImg'>
+        <image src='{{item}}'></image>
+      </view>
+    </scroll-view>
+</view>

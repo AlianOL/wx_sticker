@@ -1,0 +1,18 @@
+<!--pages/Demo/Demo.wxml-->
+<view class='back-container'>
+<image class='width-full bg-img' mode="widthFix" src='../../images/choseImg-bg.png'></image>
+<view class='top-container'>
+<movable-area class='area-container'  scale-area = "{{true}}"> 
+<movable-view class='areaview' scale='{{true}}' direction = "all">
+<view>
+<image class="sticker width-full"mode="widthFix"src="../../images/sticker/3.png"style="height: 200rpx;"></image>
+ </view>
+</movable-view>
+<movable-view class='areaview' scale='{{true}}' direction = "all">
+<view>
+<image class="sticker width-full"mode="widthFix"src="../../images/sticker/3.png"style="height: 200rpx;"></image>
+ </view>
+</movable-view>
+</movable-area>
+</view>
+</view>
